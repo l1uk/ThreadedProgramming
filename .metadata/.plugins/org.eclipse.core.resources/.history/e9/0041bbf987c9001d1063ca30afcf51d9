@@ -1,0 +1,26 @@
+package server;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class ServerManager {
+	public static void main(String[] args) {
+		ServerSocket listener = null;
+		try {
+			listener = new ServerSocket(17777);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if (listener != null)
+				try {
+					listener.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		}
+		new Thread(new BasicServer(listener)).start();
+
+	}
+}

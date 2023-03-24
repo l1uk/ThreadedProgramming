@@ -1,0 +1,13 @@
+package contenitoreStringhe;
+
+public class Utente {
+	private Contenitore c;
+	private int id;
+
+	public Utente(int id, Contenitore c) {
+		super();
+		this.id = id;
+		this.c = c;
+	}
+
+}

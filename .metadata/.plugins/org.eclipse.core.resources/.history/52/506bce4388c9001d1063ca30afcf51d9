@@ -1,0 +1,13 @@
+package server;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class ServerManager {
+	public static void main(String[] args) throws IOException {
+		ServerSocket listener = null;
+		listener = new ServerSocket(17777);
+		new Thread(new BasicServer(listener)).start();
+
+	}
+}

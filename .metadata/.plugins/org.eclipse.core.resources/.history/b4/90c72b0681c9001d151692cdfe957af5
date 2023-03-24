@@ -1,0 +1,29 @@
+package server;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class BasicServer implements Runnable {
+
+	ServerSocket listener;
+
+	public BasicServer(ServerSocket listener) {
+		this.listener = listener;
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			try {
+				Socket incomingConnection = listener.accept();
+				new BasicRequestHandler(incomingConnection).start;
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+}

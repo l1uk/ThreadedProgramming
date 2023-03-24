@@ -1,0 +1,17 @@
+package contenitoreStringhe;
+
+public class Utente extends Thread {
+	private Contenitore c;
+	private int id;
+
+	private static final numInserimenti = 10;
+	public Utente(int id, Contenitore c) {
+		super();
+		this.id = id;
+		this.c = c;
+	}
+
+	public void run() {
+
+	}
+}

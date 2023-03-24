@@ -1,0 +1,17 @@
+package contenitoreStringhe;
+
+public class ProvaEs2 {
+	static int numUtenti = 10;
+	static int contDim = 5;
+
+	public static void main(String[] args) throws InterruptedException {
+		Contenitore c = new ImplContenitore(contDim);
+		for (int i = 0; i <= numUtenti; i += 1) {
+			new RandomReader(i, c).start();
+			Thread.sleep(1000 + (long) (Math.random() * 8000));
+			new Utente(i, c).start();
+			Thread.sleep(600 + (long) (Math.random() * 1000));
+		}
+
+	}
+}

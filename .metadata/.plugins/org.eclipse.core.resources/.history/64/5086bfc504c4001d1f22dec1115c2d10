@@ -1,0 +1,33 @@
+package parcheggioAuto;
+
+public class Automobilista extends Thread {
+	private int id;
+	GestioneParcheggio GP;
+
+	public Automobilista(int id, GestioneParcheggio gP) {
+		super();
+		this.id = id;
+		GP = gP;
+	}
+
+	public void run() {
+		try {
+			System.out.println(id + " Provo a entrare");
+			GP.ingresso();
+			System.out.println(id + " Entrato");
+			int i = 0;
+			while(true) {
+				System.out.println(id + " Parcheggio a piano" + i);
+				GP.parcheggia(i);
+				System.out.println(id + " Parcheggiato a piano" + i);
+				break;
+			}
+		} catch (NoStalliLiberi | PianoInesistente e) {
+			if (e instanceof NoStalliLiberi) {
+				System.out.println();
+				Thread.sleep(500);
+				i++;
+			}
+		}
+	}
+}

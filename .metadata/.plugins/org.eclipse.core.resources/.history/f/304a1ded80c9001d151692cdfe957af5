@@ -1,0 +1,18 @@
+package server;
+
+import java.io.IOException;
+import java.net.Socket;
+
+public class BasicRequestHandler implements Runnable {
+	Socket connectionInterface;
+
+	public void BasicRequestHandler(Socket incomingConnection) {
+		this.connectionInterface = incomingConnection;
+	}
+
+	public void run() throws IOException {
+		if (connectionInterface.isConnected() && !connectionInterface.isInputShutdown()) {
+			connectionInterface.getOutputStream().write(12345);
+		}
+	}
+}

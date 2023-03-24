@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+/home/luca/concorrente/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+2991799067.index
+3227440496.index
+3762609692.index

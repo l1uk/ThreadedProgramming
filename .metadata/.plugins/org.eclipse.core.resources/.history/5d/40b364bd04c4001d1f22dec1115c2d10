@@ -1,0 +1,23 @@
+package parcheggioAuto;
+
+public class Automobilista extends Thread {
+	private int id;
+	GestioneParcheggio GP;
+
+	public Automobilista(int id, GestioneParcheggio gP) {
+		super();
+		this.id = id;
+		GP = gP;
+	}
+
+	public void run() {
+		try {
+		} catch (NoStalliLiberi | PianoInesistente e) {
+			if (e instanceof NoStalliLiberi) {
+
+				Thread.sleep(500);
+				i++;
+			}
+		}
+	}
+}

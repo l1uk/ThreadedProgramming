@@ -1,0 +1,12 @@
+package ProduttoriConsumatori;
+
+import java.util.ArrayList;
+
+public class Buffer<T> {
+	int size = 0;
+	ArrayList<T> buf;
+	public Buffer(int s) {
+		size = s;
+		buf = new ArrayList<T>();
+	}
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.lang.IndexOutOfBoundsException"/>
+    <fullyQualifiedTypeName name="ProduttoriConsumatori.Buffer"/>
+    <fullyQualifiedTypeName name="ProduttoriConsumatori.Produttore"/>
+    <fullyQualifiedTypeName name="ProduttoriConsumatori.Consumatore"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.Pieno"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.Inesistente"/>
+    <fullyQualifiedTypeName name="java.lang.Number"/>
+    <fullyQualifiedTypeName name="javax.print.attribute.standard.NumberUp"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.Utente"/>
+    <fullyQualifiedTypeName name="java.lang.Thread"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.RandomReader"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.Contenitore"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.ImplContenitore"/>
+    <fullyQualifiedTypeName name="java.lang.InterruptedException"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.ContenitoreEs2"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.ImplContenitoreEs2"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.UtenteEs2"/>
+    <fullyQualifiedTypeName name="contenitoreStringhe.RandomReaderEs2"/>
+</qualifiedTypeNameHistroy>

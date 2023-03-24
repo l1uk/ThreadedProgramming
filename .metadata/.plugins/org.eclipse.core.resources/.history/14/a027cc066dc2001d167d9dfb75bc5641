@@ -1,0 +1,6 @@
+package ProduttoriConsumatori;
+
+public class Produttore extends Thread {
+	private Buffer buf;
+	public void Produttore( Buffer b ) { buf = b; }
+}

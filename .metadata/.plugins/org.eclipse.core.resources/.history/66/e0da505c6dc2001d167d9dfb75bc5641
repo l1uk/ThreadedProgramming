@@ -1,0 +1,23 @@
+package ProduttoriConsumatori;
+
+public class Consumatore extends Thread {
+	private Buffer buf;
+
+	public Consumatore(Buffer b) {
+		buf = b;
+	}
+
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			try {
+				int v = buf.get();
+				System.out.print("Cons " + v);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		System.out.print("Prod Terminato");
+	}
+}

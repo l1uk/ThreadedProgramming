@@ -1,0 +1,28 @@
+package contenitoreStringhe;
+
+public class Utente extends Thread {
+	private Contenitore c;
+	private int id;
+
+	private static final int numInserimenti = 10;
+
+	public Utente(int id, Contenitore c) {
+		super();
+		this.id = id;
+		this.c = c;
+	}
+
+	public void run() {
+		int inserimentiEffettuati = 0;
+		int currentId = 0;
+		while (inserimentiEffettuati < numInserimenti) {
+			try {
+				currentId = c.inserisci(getName());
+				inserimentiEffettuati++;
+			} catch (Pieno e) {
+				e.printStackTrace();
+			}
+			c.recupera(currentId);
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package ProduttoriConsumatori;
+
+public class ProduttoriConsumatori {
+	public static void main(String[] args) {
+		Buffer<Integer> buf = new Buffer<Integer>(10);
+		Produttore p = new Produttore(buf);
+		Consumatore c = new Consumatore(buf);
+		p.start();
+		c.start();
+	}
+}

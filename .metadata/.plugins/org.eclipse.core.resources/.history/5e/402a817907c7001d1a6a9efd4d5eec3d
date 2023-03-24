@@ -1,0 +1,6 @@
+package contenitoreStringhe;
+
+public class Utente {
+	private final static Contenitore c;
+
+}
