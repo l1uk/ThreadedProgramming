@@ -1,4 +1,4 @@
-package server;
+package tcp_server;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -40,7 +40,7 @@ public class BasicRequestHandler implements Runnable {
 		Runtime.getRuntime().addShutdownHook(new Thread() {
 			public void run() {
 				try {
-					System.out.println("The server is shut down!");
+					System.out.println("The tcp_server is shut down!");
 
 					if (connectionInterface != null && !connectionInterface.isClosed())
 						connectionInterface.close();

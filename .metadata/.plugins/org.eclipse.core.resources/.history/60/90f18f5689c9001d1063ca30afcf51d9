@@ -1,4 +1,4 @@
-package server;
+package tcp_server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -16,7 +16,7 @@ public class ServerManager {
 		// Objects created in run method are finalized when
 		// program terminates and thread exits
 		try {
-			server.close();
+			tcp_server.close();
 		} catch (IOException e) {
 			System.out.println("Could not close socket");
 			System.exit(-1);

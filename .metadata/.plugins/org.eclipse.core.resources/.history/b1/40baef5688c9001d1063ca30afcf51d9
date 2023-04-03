@@ -1,4 +1,4 @@
-package server;
+package tcp_server;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -12,7 +12,7 @@ public class ServerManager {
 			public void run() {
 				try {
 					listener.close();
-					System.out.println("The server is shut down!");
+					System.out.println("The tcp_server is shut down!");
 				} catch (IOException e) {
 					/* failed */ }
 			}

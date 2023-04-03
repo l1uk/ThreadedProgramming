@@ -1,4 +1,4 @@
-package client;
+package tcp_client;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,7 +16,7 @@ public class BasicClient implements Runnable {
 		try {
 			InputStream input = s.getInputStream();
 			byte[] s = input.readAllBytes();
-			System.out.println("Reply from server: " + s);
+			System.out.println("Reply from tcp_server: " + s);
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

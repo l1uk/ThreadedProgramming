@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author luca
- *
- */
-module concorrente {
-}

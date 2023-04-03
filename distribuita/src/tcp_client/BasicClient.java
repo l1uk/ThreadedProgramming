@@ -1,4 +1,4 @@
-package client;
+package tcp_client;
 
 import java.io.DataInputStream;
 import java.io.EOFException;
@@ -14,7 +14,6 @@ public class BasicClient implements Runnable {
 		super();
 		this.s = s;
 	}
-
 	public void run() {
 		DataInputStream in = null;
 		PrintWriter out = null;
@@ -35,14 +34,7 @@ public class BasicClient implements Runnable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			try {
-				in.close();
-				out.close();
-				s.close();
 				System.out.println("Client " + Thread.currentThread().getId() + " ended");
-			} catch (IOException ioe) {
-				ioe.printStackTrace();
-			}
 		}
 	}
 }
