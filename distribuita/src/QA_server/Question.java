@@ -1,4 +1,4 @@
-package udp_excercise;
+package QA_server;
 
 public class Question {
     private String question, answer;

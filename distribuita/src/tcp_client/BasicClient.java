@@ -1,40 +1,38 @@
 package tcp_client;
 
-import java.io.DataInputStream;
-import java.io.EOFException;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import java.io.*;
 import java.net.Socket;
 
 public class BasicClient implements Runnable {
-	Socket s;
+    Socket socket;
 
-	public BasicClient(Socket s) {
-		super();
-		this.s = s;
-	}
-	public void run() {
-		DataInputStream in = null;
-		PrintWriter out = null;
-		try {
-			in = new DataInputStream(s.getInputStream());
+    public BasicClient(String host, int port) throws IOException {
+        super();
+        this.socket = new Socket(host, port);
+    }
 
-			out = new PrintWriter(new OutputStreamWriter(s.getOutputStream()));
+    public void run() {
+        try (
+                BufferedReader in = new BufferedReader(
+                        new InputStreamReader(socket.getInputStream())
+                );
+                PrintWriter out = new PrintWriter(
+                        new BufferedWriter(
+                                new OutputStreamWriter(socket.getOutputStream())
+                        ),
+                        true // Auto-flush
+                )
+        ) {
+            String receive;
+            while ((receive = in.readLine()) != null) {
+                System.out.println(receive);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
 
-			while (true) // ripeti all'infinito
-				try {
-					int val = in.readInt();
-					System.out.println("Read: " + val);
-				} catch (EOFException e) { // gestisci l'eccezione eof
-					break; // esci dal ciclo
-				}
 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-				System.out.println("Client " + Thread.currentThread().getId() + " ended");
-		}
-	}
+            System.out.println("##### Client " + Thread.currentThread().getId() + " ended");
+
+    }
 }
