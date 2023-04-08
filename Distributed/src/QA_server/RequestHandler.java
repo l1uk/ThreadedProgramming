@@ -25,7 +25,7 @@ public class RequestHandler extends BasicRequestHandler {
 
     private List loadFile() throws IOException {
         List<Question> result = new ArrayList<>();
-        File f = new File("questions.txt");
+        File f = new File("Files/questions.txt");
         BufferedReader r = new BufferedReader(new FileReader(f));
         while (true) {
             String q = r.readLine();
