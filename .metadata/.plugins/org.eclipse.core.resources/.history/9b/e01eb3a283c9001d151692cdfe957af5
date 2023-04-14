@@ -1,5 +1,0 @@
-package tcp_client;
-
-public class ClientsManager {
-
-}

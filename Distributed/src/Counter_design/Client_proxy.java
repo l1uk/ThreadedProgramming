@@ -6,21 +6,20 @@ import java.net.Socket;
 
 public class Client_proxy implements CounterInterface, AutoCloseable{
 
-    private Socket s;
+    private final Socket s;
     private PrintWriter out;
 
     private BufferedReader in;
 
     public Client_proxy() throws IOException {
         InetAddress addr = InetAddress.getByName(null);
-        System.out.println("addr = " + addr);
         s = new Socket(addr, Server.PORT);
-        System.out.println("socket = " + s);
 
         try {
             in = new BufferedReader(new InputStreamReader(s.getInputStream()));
             out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(s.getOutputStream())),true);
         }catch(IOException e) {
+            e.printStackTrace();
             if (out != null) {
                 out.close();
             }
@@ -35,26 +34,21 @@ public class Client_proxy implements CounterInterface, AutoCloseable{
 
     }
 
-    @Override
-    public void reset() {
+    public void reset() throws IOException {
         out.println("reset");
+        in.readLine();
     }
 
-    @Override
-    public void increment() {
+    public void increment() throws IOException {
         out.println("incr");
+        in.readLine();
     }
 
-    @Override
     public int value() throws IOException {
         out.println("get");
-        //sistemare
-        System.out.println(in.readLine());
-
-        return Integer.parseInt("1");
+        return Integer.parseInt(in.readLine());
     }
     public void close() throws IOException {
-        System.out.println("Closing...");
         out.close();
         in.close();
         s.close();

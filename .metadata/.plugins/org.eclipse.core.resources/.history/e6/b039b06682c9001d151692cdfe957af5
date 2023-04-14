@@ -1,7 +1,0 @@
-package tcp_client;
-
-public class BasicClient {
-	public static void main() {
-
-	}
-}

@@ -1,6 +1,0 @@
-package ProduttoriConsumatori;
-
-public class Produttore extends Thread {
-		private Buffer<Integer> buf;
-	
-}

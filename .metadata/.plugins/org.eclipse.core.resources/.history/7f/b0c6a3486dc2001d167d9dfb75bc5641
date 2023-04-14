@@ -1,5 +1,0 @@
-package ProduttoriConsumatori;
-
-public class Consumatore extends Thread{
-
-}

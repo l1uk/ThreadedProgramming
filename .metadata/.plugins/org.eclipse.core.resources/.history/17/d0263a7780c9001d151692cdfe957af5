@@ -1,5 +1,0 @@
-package tcp_server;
-
-public class BasicRequestHandler {
-	public void BasicRequestHandler(incomingConnection) {}
-}
