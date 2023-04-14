@@ -4,14 +4,14 @@ import java.io.*;
 import java.net.Socket;
 
 public class BasicRequestHandler implements Runnable {
-    Socket connectionInterface;
+    final Socket connectionInterface;
 
     public BasicRequestHandler(Socket incomingConnection) {
         this.connectionInterface = incomingConnection;
     }
 
     public void run() {
-        System.out.println("### REQEUST HANDLER ID=" + Thread.currentThread().getId()  +" ### Replied to " + connectionInterface.getInetAddress().getHostName());
+        System.out.println("### REQEUST HANDLER ID=" + Thread.currentThread().getName()  +" ### Replied to " + connectionInterface.getInetAddress().getHostName());
         if (connectionInterface.isConnected() /* && !connectionInterface.isInputShutdown() */) {
 
             try (

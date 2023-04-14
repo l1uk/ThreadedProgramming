@@ -3,8 +3,8 @@ package tcp_client;
 import java.io.IOException;
 
 public class ClientsManager {
-    public static String HOST = "localhost";
-    public static int PORT = 17777;
+    public static final String HOST = "localhost";
+    public static final int PORT = 17777;
 
     public static void main(String[] args) throws IOException, InterruptedException {
         Integer clientCounter = 0;

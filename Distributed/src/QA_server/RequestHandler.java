@@ -3,7 +3,6 @@ package QA_server;
 import tcp_server.BasicRequestHandler;
 
 import java.io.*;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +13,6 @@ public class RequestHandler extends BasicRequestHandler {
 
 
     List<Question> questions;
-
-    private ServerSocket serverSocket;
 
     public RequestHandler(Socket incomingConnection) throws IOException {
         super(incomingConnection);

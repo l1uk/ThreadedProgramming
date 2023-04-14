@@ -9,8 +9,5 @@ public interface GestioneParcheggio {
 
     void partenza(int piano) throws PianoInesistente;
 
-    int postiLiberi();
-
-    int stalliLiberi(int piano) throws PianoInesistente;
 }
 

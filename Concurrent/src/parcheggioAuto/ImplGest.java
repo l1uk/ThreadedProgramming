@@ -2,9 +2,9 @@ package parcheggioAuto;
 
 public class ImplGest implements GestioneParcheggio {
 
-    Piano[] parcheggio;
-    int numPiani;
-    int numPosti, maxPosti;
+    final Piano[] parcheggio;
+    final int numPiani;
+    int numPosti;
 
     public ImplGest(int piani, int stalli) {
         parcheggio = new Piano[piani];
@@ -12,7 +12,6 @@ public class ImplGest implements GestioneParcheggio {
             parcheggio[i] = new Piano(stalli);
         numPiani = piani;
         numPosti = piani * stalli;
-        maxPosti = numPosti;
 
     }
 
@@ -38,12 +37,6 @@ public class ImplGest implements GestioneParcheggio {
         notifyAll();
     }
 
-    @Override
-    public synchronized int postiLiberi() {
-        // TODO Auto-generated method stub
-        return numPosti;
-    }
-
     // operazioni a livello del singolo piano
     @Override
     public synchronized void parcheggia(int piano) throws PianoInesistente, NoStalliLiberi {
@@ -59,14 +52,6 @@ public class ImplGest implements GestioneParcheggio {
         if (piano < 0 || piano >= numPiani)
             throw new PianoInesistente();
         parcheggio[piano].partenza();
-    }
-
-    @Override
-    public synchronized int stalliLiberi(int piano) throws PianoInesistente {
-        // TODO Auto-generated method stub
-        if (piano < 0 || piano >= numPiani)
-            throw new PianoInesistente();
-        return parcheggio[piano].stalliLiberi();
     }
 
 }

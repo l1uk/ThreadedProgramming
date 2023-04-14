@@ -1,7 +1,7 @@
 package parcheggioAuto;
 
 public class Piano {
-    int numStalli;
+    final int numStalli;
     int occupati;
 
     public Piano(int d) {

@@ -1,8 +1,8 @@
 package contenitoreStringhe;
 
 public class ProvaEs2 {
-    static int numUtenti = 20;
-    static int contDim = 5;
+    static final int numUtenti = 20;
+    static final int contDim = 5;
 
     public static void main(String[] args) throws InterruptedException {
         ContenitoreEs2 c = new ImplContenitoreEs2(contDim);

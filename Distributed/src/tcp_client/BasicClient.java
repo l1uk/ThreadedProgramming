@@ -32,7 +32,8 @@ public class BasicClient implements Runnable {
         }
 
 
-            System.out.println("##### Client " + Thread.currentThread().getId() + " ended");
+            System.out.println("##### Client " + Thread.currentThread().getName()
+                    + " ended");
 
     }
 }

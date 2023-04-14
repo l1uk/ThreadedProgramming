@@ -2,7 +2,7 @@ package parcheggioAuto;
 
 public class Automobilista extends Thread {
     private final int id;
-    GestioneParcheggio GP;
+    final GestioneParcheggio GP;
 
     public Automobilista(int id, GestioneParcheggio gP) {
         super();

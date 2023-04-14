@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Buffer<T> {
     private static int size = 1;
-    ArrayList<T> buf;
+    final ArrayList<T> buf;
     private int currentCapacity = 0;
 
     public Buffer(int s) {
@@ -30,10 +30,6 @@ public class Buffer<T> {
         notifyAll();
 
         return value;
-    }
-
-    public int getCurrentCapacity() {
-        return currentCapacity;
     }
 
 }
