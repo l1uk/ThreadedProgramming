@@ -1,5 +1,7 @@
 package tcp_server;
 
+import Map_reduce.RainData;
+
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.net.ServerSocket;

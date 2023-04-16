@@ -6,14 +6,20 @@ import java.net.Socket;
 public class BasicRequestHandler implements Runnable {
     final Socket connectionInterface;
 
+    boolean wantsStream = false;
+
     public BasicRequestHandler(Socket incomingConnection) {
         this.connectionInterface = incomingConnection;
     }
 
-    public void run() {
-        System.out.println("### REQEUST HANDLER ID=" + Thread.currentThread().getName()  +" ### Replied to " + connectionInterface.getInetAddress().getHostName());
-        if (connectionInterface.isConnected() /* && !connectionInterface.isInputShutdown() */) {
+    public BasicRequestHandler(Socket connectionInterface, boolean wantsStream) {
+        this.connectionInterface = connectionInterface;
+        this.wantsStream = wantsStream;
+    }
 
+    public void run() {
+        System.out.println("### REQEUST HANDLER ID=" + Thread.currentThread().getName() + " ### Replied to " + connectionInterface.getInetAddress().getHostName());
+        if (connectionInterface.isConnected() /* && !connectionInterface.isInputShutdown() */) {
             try (
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(connectionInterface.getInputStream())
@@ -27,14 +33,22 @@ public class BasicRequestHandler implements Runnable {
                             true // Auto-flush
                     )
             ) {
-                serve(in, out);
+                if (!wantsStream)
+                    serve(in, out);
+                else
+                    serve(connectionInterface.getInputStream(),
+                            connectionInterface.getOutputStream());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public void serve(BufferedReader in, PrintWriter out) throws IOException{
+
+    public void serve(BufferedReader in, PrintWriter out) throws IOException {
         out.println("Hello!");
+    }
+
+    public void serve(InputStream in, OutputStream out) throws IOException {
     }
 }
