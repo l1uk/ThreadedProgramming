@@ -17,9 +17,11 @@ public class RequestHandler extends BasicRequestHandler {
     public void serve(InputStream in, OutputStream out) throws IOException {
         RainData maxGG = null, maxMM = null;
         try (
-                ObjectInput is = new ObjectInputStream(in);
-                ObjectOutput os = new ObjectOutputStream(out)
+
+                ObjectOutput os = new ObjectOutputStream(out);
+                ObjectInput is = new ObjectInputStream(in)
         ) {
+            yearData = null;
             yearData = (RainData[]) is.readObject();
 
 

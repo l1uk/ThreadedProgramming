@@ -29,11 +29,14 @@ public class ClientMap {
         rainFile = new File(fileName);
         parseFile();
 
-        CyclicBarrier barrier = new CyclicBarrier(rainDataPerYear.size());
+        ClientReduce reducer = new ClientReduce(InetAddress.getByName(address), Server.PORT);
+        CyclicBarrier barrier = new CyclicBarrier(rainDataPerYear.size(), reducer);
 
 
         for (RainData[] rainData : rainDataPerYear) {
-            new Thread(new ClientThread(rainData, barrier, Server.PORT, InetAddress.getByName(address))).start();
+            new Thread(
+                    new ClientThread(InetAddress.getByName(address), Server.PORT, rainData, barrier, reducer)
+            ).start();
         }
 
 
@@ -46,7 +49,7 @@ public class ClientMap {
         while (in.ready()) {
             yearData[i] = new RainData(in.readLine());
             i++;
-            if (i == 11) {
+            if (i == 12) {
                 i = 0;
                 rainDataPerYear.add(yearData);
                 yearData = new RainData[12];

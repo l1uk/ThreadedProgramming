@@ -11,42 +11,44 @@ import java.util.concurrent.CyclicBarrier;
 
 public class ClientThread implements Runnable {
 
-    InetAddress serverAddress;
+    private InetAddress serverAddress;
+    private int port;
     private RainData[] yearData;
 
     private CyclicBarrier barrier;
 
-    private int port;
 
-    public ClientThread(RainData[] yearData, CyclicBarrier barrier, int port, InetAddress serverAddress) {
+    private ClientReduce reducer;
+
+    public ClientThread( InetAddress serverAddress, int port, RainData[] yearData, CyclicBarrier barrier, ClientReduce reducer ) {
+        this.serverAddress = serverAddress;
+        this.port = port;
         this.yearData = yearData;
         this.barrier = barrier;
-        this.port = port;
-        this.serverAddress = serverAddress;
+        this.reducer = reducer;
     }
 
     @Override
     public void run() {
 
         try (Socket socket = new Socket(serverAddress, port)) {
-            try (// this line gets stuck
-                 ObjectInputStream in = new ObjectInputStream(socket.getInputStream())) {
-                try (ObjectOutput out = new ObjectOutputStream(socket.getOutputStream())) {
+            try (ObjectOutput out = new ObjectOutputStream(socket.getOutputStream()
+            )) {
+                try (
+                        ObjectInputStream in = new ObjectInputStream(socket.getInputStream());
+                ) {
                     out.writeObject(yearData);
                     RainData maxMM = (RainData) in.readObject();
                     RainData maxGG = (RainData) in.readObject();
-                    System.out.println(maxMM);
-                    System.out.println(maxGG);
 
-                    System.out
-                            .println("ssad");
+                    reducer.addRainDataMM(maxMM);
+                    reducer.addRainDataGG(maxGG);
+
                     barrier.await();
                 }
             }
         } catch (IOException | InterruptedException | BrokenBarrierException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        System.out
-                .println("ssad");
     }
 }
