@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public class RandomReaderEs2 extends Thread {
     private static final int numLetture = 10;

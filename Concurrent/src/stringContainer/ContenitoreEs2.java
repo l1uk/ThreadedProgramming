@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public interface ContenitoreEs2 {
     int inserisci(String s) throws InterruptedException;

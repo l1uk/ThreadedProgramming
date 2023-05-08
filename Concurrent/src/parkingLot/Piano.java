@@ -1,4 +1,4 @@
-package parcheggioAuto;
+package parkingLot;
 
 public class Piano {
     final int numStalli;

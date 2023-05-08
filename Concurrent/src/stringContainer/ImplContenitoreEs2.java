@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public class ImplContenitoreEs2 implements ContenitoreEs2 {
 

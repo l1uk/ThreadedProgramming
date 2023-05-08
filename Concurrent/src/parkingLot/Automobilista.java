@@ -1,4 +1,4 @@
-package parcheggioAuto;
+package parkingLot;
 
 public class Automobilista extends Thread {
     private final int id;

@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public class Prova {
     static final int numUtenti = 20;

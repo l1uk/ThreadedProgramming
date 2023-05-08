@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public class ProvaEs2 {
     static final int numUtenti = 20;

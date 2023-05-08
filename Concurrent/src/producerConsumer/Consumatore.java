@@ -1,4 +1,4 @@
-package ProduttoriConsumatori;
+package producerConsumer;
 
 public class Consumatore extends Thread {
     private final Buffer buf;

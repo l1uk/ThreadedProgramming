@@ -1,4 +1,4 @@
-package ProduttoriConsumatori;
+package producerConsumer;
 
 public class ProduttoriConsumatori {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public class Inesistente extends Exception {
 

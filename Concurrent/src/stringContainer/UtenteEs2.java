@@ -1,11 +1,11 @@
-package contenitoreStringhe;
+package stringContainer;
 
-public class Utente extends Thread {
+public class UtenteEs2 extends Thread {
     private static final int numInserimenti = 10;
-    private final Contenitore c;
+    private final ContenitoreEs2 c;
     private final int id;
 
-    public Utente(int id, Contenitore c) {
+    public UtenteEs2(int id, ContenitoreEs2 c) {
         super();
         this.id = id;
         this.c = c;
@@ -16,12 +16,15 @@ public class Utente extends Thread {
         int currentId = 0;
         while (inserimentiEffettuati < numInserimenti) {
             try {
+                System.out.println("Utente " + id + "in coda per " + (inserimentiEffettuati + 1) + "esimo inserimento");
                 currentId = c.inserisci(getName() + inserimentiEffettuati);
-                inserimentiEffettuati++;
-                System.out.println("Utente " + id + "effettuato " + inserimentiEffettuati + "esimo inserimento");
-            } catch (Pieno e) {
-                System.err.println("Utente " + id + " " + (inserimentiEffettuati + 1) + "esimo inserimento fallito");
+            } catch (InterruptedException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
             }
+            inserimentiEffettuati++;
+            System.out.println("Utente " + id + "effettuato " + inserimentiEffettuati + "esimo inserimento");
+
             try {
                 Thread.sleep(6000 + (long) (Math.random() * 10000));
             } catch (InterruptedException e) {

@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public class RandomReader extends Thread {
     private static final int numLetture = 10;

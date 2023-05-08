@@ -1,4 +1,4 @@
-package ProduttoriConsumatori;
+package producerConsumer;
 
 import java.util.ArrayList;
 

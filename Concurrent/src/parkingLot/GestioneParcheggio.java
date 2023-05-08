@@ -1,4 +1,4 @@
-package parcheggioAuto;
+package parkingLot;
 
 public interface GestioneParcheggio {
     void ingresso();

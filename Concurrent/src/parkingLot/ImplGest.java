@@ -1,4 +1,4 @@
-package parcheggioAuto;
+package parkingLot;
 
 public class ImplGest implements GestioneParcheggio {
 

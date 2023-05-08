@@ -1,4 +1,4 @@
-package contenitoreStringhe;
+package stringContainer;
 
 public interface Contenitore {
     int inserisci(String s) throws Pieno;
