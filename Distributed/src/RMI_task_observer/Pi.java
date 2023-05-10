@@ -1,10 +1,12 @@
 package RMI_task_observer;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Pi implements Task<BigDecimal>, Serializable {
+    @Serial
     private static final long serialVersionUID = 1;
     private final int digits;
 

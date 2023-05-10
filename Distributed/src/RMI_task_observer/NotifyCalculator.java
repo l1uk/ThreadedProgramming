@@ -19,9 +19,8 @@ public class NotifyCalculator<T> implements Runnable {
             throw new RuntimeException(e);
         }
         T res = task.execute();
-        Object result = (Object) res;
         try {
-            server.notifyObservers(result);
+            server.notifyObservers(res);
         } catch (RemoteException e) {
             e.printStackTrace();
         }

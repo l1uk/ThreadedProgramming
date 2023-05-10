@@ -8,7 +8,6 @@ import java.rmi.server.UnicastRemoteObject;
 public class Server extends Subject implements Computer {
     public static final int PORT = 7777;
 
-    private Object result = null;
 
     public static void main(String[] args) throws RemoteException {
         Server engine = new Server();
@@ -22,7 +21,7 @@ public class Server extends Subject implements Computer {
     @Override
     public <T> void startTask(Task<T> t) throws RemoteException {
         Thread th = new Thread(
-                new NotifyCalculator(t, this)
+                new NotifyCalculator<>(t, this)
         );
         th.start();
     }
