@@ -1,0 +1,7 @@
+Esercizio 1
+Dato il seguente codice Java rappresentante la classe dei messaggi e le interfacce del gestore si realizzino le classi
+GestoreM, che implementa le interfacce in modo da essere Thread Safe
+Produttore, la cui istanza rappresenta il produttore
+Consumatore, le cui istanze rappresentano i consumatori
+Prova contenente il main che istanzia 1 produttore, 5 consumatori e un gestore dei messaggi
+DestinataroPieno, le cui istanze rappresentano l’omonima eccezione in modo tale che il produttore sappia quale consumatore non ha ricevuto il messaggio

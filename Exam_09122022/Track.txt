@@ -1,0 +1,9 @@
+Si consideri un sistema concorrente (non distribuito) costituito da un produttore e 5 consumatori
+e un gestore dei messaggi presso il quale ogni consumatore si registra fornendo il proprio identificatore (un numero intero univoco).
+Il produttore genera dei messaggi contenenti il destinatario (ogni messaggio può avere un solo destinatario)
+e un testo che invia al gestore dei messaggi.
+I consumatori, una volta registrati, accedono al gestore per prelevare i messaggi a loro destinati.
+Il gestore può memorizzare al massimo 10 messaggi per consumatore.
+Qualora il produttore cerchi di inviare un messaggio a un consumatore per il quale non vi è più capienza
+il gestore solleverà un’opportuna eccezione.
+Viceversa, la ricezione di messaggi è un’operazione bloccante nel caso non vi siano messaggi da ricevere.

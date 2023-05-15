@@ -1,0 +1,3 @@
+Esercizio 2
+Si modifichi il codice dell’esercizio precedente in modo tale da permettere al gestore, al produttore e ai consumatori
+di risiedere su nodi diversi di un sistema distribuito basato su Java RMI.
