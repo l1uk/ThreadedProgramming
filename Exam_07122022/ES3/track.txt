@@ -1,0 +1,9 @@
+Esercizio 3
+Si realizzi in Java-RMI un sistema distribuito che permetta l’accesso
+da parte di processi client ad un oggetto nastro posto su un server.
+Si modifichi il codice sviluppato negli esercizi precedenti
+in modo tale da realizzare
+- Il lato server
+- Il lato client costituito da un singolo processo
+che si collega al server per accedere alle funzionalità del nastro
+: Il sistema deve funzionare correttamente in presenza di più processi client

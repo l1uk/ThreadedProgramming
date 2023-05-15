@@ -7,6 +7,9 @@
       <sourceFolder url="file://$MODULE_DIR$/Distributed/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exam_09122022/ES1/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exam_09122022/ES2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exam_07122022/ES1/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exam_07122022/ES2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Exam_07122022/ES3/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

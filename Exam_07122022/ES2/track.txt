@@ -1,0 +1,4 @@
+Esercizio 2
+Si realizzi in Java un sistema concorrente (non distribuito)
+costituito da N Threads che utilizzano un'unica istanza della classe sviluppata
+nell’esercizio precedente.

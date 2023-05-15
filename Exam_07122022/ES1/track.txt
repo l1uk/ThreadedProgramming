@@ -1,0 +1,18 @@
+Esercizio 1
+Si realizzi in Java una classe Thread-safe che implementa la seguente interfaccia Nastro
+interface Nastro {
+ void write(String s) throws noWrite;
+ String read() throws noRead;
+ void rewind();
+ boolean empty();
+}
+avente le seguenti caratteristiche:
+write: inserisce una stringa nel nastro nella posizione corrente.
+La nuova posizione corrente al termine dell’operazione è quella successiva alla stringa inserita.
+L’eccezione noWrite viene sollevata qualora prima dell’operazione vi sia una stringa in posizione corrente.
+read: restituisce la stringa in posizione corrente.
+Al termine dell’operazione la posizione corrente si sposta alla stringa successiva a quello letta.
+L’eccezione noRead viene sollevata qualora in posizione corrente non vi sia una stringa.
+rewind: riporta la posizione corrente alla prima stringa del nastro.
+Qualora non vi siano stringhe, la posizione corrente non viene modificata.
+empty: restituisce il valore Vero se e solo se il nastro non contiene stringhe.
