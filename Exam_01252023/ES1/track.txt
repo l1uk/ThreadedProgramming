@@ -1,0 +1,2 @@
+Si definisca una classe Java che implementi l’interfaccia GestioneParcheggio
+e che garantisca un corretto funzionamento in ambiente concorrente, in presenza di più Thread.

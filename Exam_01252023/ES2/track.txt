@@ -1,0 +1,3 @@
+Si definisca una classe Automobilista, rappresentante il comportamento di un automobilista
+e un sistema concorrente in cui vi sia un parcheggio a 3 piani con 5 stalli per piano e 20 automobilisti
+che usano il parcheggio.

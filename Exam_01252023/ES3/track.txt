@@ -1,0 +1,3 @@
+Si realizzi, utilizzando RMI, un sistema distribuito client/server,
+in cui il server gestisce il parcheggio sviluppato nell’esercizio 1
+e i client rappresentano i singoli automobilisti

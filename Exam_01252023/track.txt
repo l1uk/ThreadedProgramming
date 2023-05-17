@@ -1,8 +1,12 @@
-Si vuole realizzare un sistema per la gestione degli accessi a un parcheggio di N piani con M stalli per piano (N.B. Uno stallo è un posto auto). Il sistema deve controllare l’accesso delle autovetture alla struttura nel suo complesso e ai singoli piani solo quando vi sono stalli liberi.
+Si vuole realizzare un sistema per la gestione degli accessi a un parcheggio di N piani
+con M stalli per piano (N.B. Uno stallo è un posto auto).
+Il sistema deve controllare l’accesso delle autovetture alla struttura nel suo complesso
+e ai singoli piani solo quando vi sono stalli liberi.
 Il sistema offre le seguenti funzionalità
 Ingresso, per entrare nel parcheggio. Qualora il parcheggio sia pieno il sistema mette in attesa l’automobilista.
 Uscita, per uscire dal parcheggio. Qualora vi sia qualche automobilista in attesa, il sistema ne risveglia uno.
-Parcheggia, che preso un piano, permette all’automobilista di parcheggiare. Qualora non vi siano stalli liberi al piano, il sistema solleva un’eccezione.
+Parcheggia, che preso un piano, permette all’automobilista di parcheggiare.
+Qualora non vi siano stalli liberi al piano, il sistema solleva un’eccezione.
 Partenza, che modella il fatto che un’automobilista libera lo stallo dove era parcheggiato.
 Posti liberi, che restituisce il numero di posti liberi nel parcheggio.
 Stalli liberi, che preso un piano, restituisce il numero di stalli liberi al piano.
