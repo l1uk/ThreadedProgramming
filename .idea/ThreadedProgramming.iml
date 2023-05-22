@@ -13,6 +13,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Exam_01252023/ES1/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exam_01252023/ES2/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Exam_01252023/ES3/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Swing/Cronometer" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
