@@ -1,0 +1,16 @@
+Si consideri un sistema rappresentante un sistema bancario, costituito da un insieme di conti
+correnti, che consente di effettuare le seguenti operazioni:
+• Saldo del conto corrente
+• Versamento di una somma di denaro su un determinato conto corrente
+• Prelievo di una somma di denaro da un determinato conto corrente
+• Trasferimento di una somma di denaro da un conto ad un altro.
+così come specificato dalla seguente interfaccia
+
+Le operazioni di prelievo e trasferimento possono essere effettuate solo se sul conto è presente una
+soma pari almeno a quella coinvolta nell’operazione richiesta. Per semplicità le somme di denaro
+sono modellate attraverso numeri interi che devono essere non negativi.
+Il metodo attendiTrasferimento consente a chi lo esegue di attendere l’arrivo di un
+trasferimento per un tempo massimo di 1 secondo. Se trascorso tale tempo il trasferimento non è
+avvenuto il metodo ritorna false altrimenti true.
+Infine, la classe IBAN rappresenta un identificatore univoco di conto correnti, che per semplicità
+può essere modellato tramite una Stringa.

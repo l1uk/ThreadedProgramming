@@ -1,0 +1,7 @@
+Esercizio 1
+Si realizzi una classe che implementa l’interfaccia data e che funzioni correttamente in ambiente
+concorrente.
+Si realizzi, inoltre, un programma di prova in cui vi sono almeno due correntisti A e B che
+effettuano le seguenti operazioni:
+A: saldo, versamento, saldo, trasferimento a B, saldo
+B: saldo, attende il trasferimento da B e dopo che il trasferimento è avvenuto un prelievo e un saldo
