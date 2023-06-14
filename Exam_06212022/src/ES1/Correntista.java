@@ -21,36 +21,30 @@ public class Correntista implements Runnable {
 
     @Override
     public void run() {
-        gest.nuovoConto(iban);
         try {
             if (c == 'a') {
                 System.out.println(c + ": " + gest.saldo(iban));
-                Thread.sleep(1000);
+                Thread.sleep(200);
                 gest.versamento(iban, 120);
-                Thread.sleep(1000);
+                Thread.sleep(200);
                 System.out.println(c + ": " + gest.saldo(iban));
                 gest.trasferimento(iban, ibanb, 50);
-                Thread.sleep(1000);
+                Thread.sleep(200);
                 System.out.println(c + ": " + gest.saldo(iban));
             } else if (c == 'b') {
                 System.out.println(c + ": " + gest.saldo(iban));
-                Thread.sleep(1000);
+                Thread.sleep(200);
                 gest.attendiTrasferimento(iban);
-                Thread.sleep(800);
+                Thread.sleep(200);
                 gest.prelievo(iban, 20);
-                Thread.sleep(1000);
+                Thread.sleep(200);
                 System.out.println(c + ": " + gest.saldo(iban));
 
 
             }
 
-        } catch (SistemaBancaInterface.ContoInesistente e) {
-            throw new RuntimeException(e);
-        } catch (SistemaBancaInterface.SommaNegativa e) {
-            throw new RuntimeException(e);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (SistemaBancaInterface.DisponibilitaInsufficiente e) {
+        } catch (SistemaBancaInterface.ContoInesistente | SistemaBancaInterface.SommaNegativa | InterruptedException |
+                 SistemaBancaInterface.DisponibilitaInsufficiente e) {
             throw new RuntimeException(e);
         }
     }

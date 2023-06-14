@@ -1,6 +1,9 @@
 package ES2;
 
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 
 public class Correntista_Remote implements Runnable {
     String iban;
@@ -8,21 +11,28 @@ public class Correntista_Remote implements Runnable {
     public SistemaBancaRemoteInterface gest;
     public Character c;
 
-    public Correntista_Remote(String iban, SistemaBancaRemoteInterface gest, Character c) {
+    public Correntista_Remote(String iban, Character c) {
         this.iban = iban;
-        this.gest = gest;
         this.c = c;
     }
 
-    public Correntista_Remote(String iban, String ibanb, SistemaBancaRemoteInterface gest, Character c) {
+    public Correntista_Remote(String iban, String ibanb, Character c) {
         this.iban = iban;
         this.ibanb = ibanb;
-        this.gest = gest;
         this.c = c;
     }
 
     @Override
     public void run() {
+        Registry r = null;
+        try {
+            r = LocateRegistry.getRegistry(1099);
+            gest = (SistemaBancaRemoteInterface) r.lookup("GestioneRemota");
+
+        } catch (RemoteException | NotBoundException e) {
+            throw new RuntimeException(e);
+        }
+
         try {
             gest.nuovoConto(iban);
         } catch (RemoteException e) {

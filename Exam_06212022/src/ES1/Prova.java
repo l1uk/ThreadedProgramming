@@ -5,6 +5,8 @@ public class Prova {
         SistemaBancaInterfaceImpl gest = new SistemaBancaInterfaceImpl();
         SistemaBancaInterface.IBAN iban_a = new SistemaBancaInterface.IBAN("abc");
         SistemaBancaInterface.IBAN iban_b = new SistemaBancaInterface.IBAN("bcd");
+        gest.nuovoConto(iban_a);
+        gest.nuovoConto(iban_b);
         new Thread(
                 new Correntista(iban_a, iban_b, gest, 'a')
         ).start();

@@ -6,14 +6,14 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class SistemaBancaInterfaceImpl implements SistemaBancaInterface {
 
-    Map<IBAN, Integer> conti;
+    final Map<IBAN, Integer> conti;
 
     public SistemaBancaInterfaceImpl() {
         this.conti = new HashMap<>();
     }
 
     public void nuovoConto(IBAN idcc) {
-        conti.computeIfAbsent(idcc, k -> 0);
+        conti.putIfAbsent(idcc, 0);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class SistemaBancaInterfaceImpl implements SistemaBancaInterface {
         AtomicBoolean enough = new AtomicBoolean(false);
         synchronized (this.conti) {
             this.conti.computeIfPresent(idcc, (k, v) -> {
-                        Integer newValue = v;
+                int newValue = v;
                         existing.set(true);
                         if (v >= s) {
                             newValue -= s;

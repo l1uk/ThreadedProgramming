@@ -32,11 +32,8 @@ public class GestoreM implements ConsumatoreMsgInterface, ProduttoreMsgInterface
     @Override
     public synchronized void send(Msg m) throws DestinatarioPieno {
         int numMsg;
-
-        mapMsgConsumatore.computeIfAbsent(m.dest, k -> new Stack<>());
+        mapMsgConsumatore.putIfAbsent(m.dest, new Stack<>());
         numMsg = mapMsgConsumatore.get(m.dest).size();
-
-
         if (numMsg >= MAX_MSG) {
             throw new DestinatarioPieno(m.dest);
         } else {
