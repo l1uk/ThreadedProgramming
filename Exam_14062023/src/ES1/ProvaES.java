@@ -1,6 +1,6 @@
 package ES1;
 
-public class Prova {
+public class ProvaES {
     static final int NUM_CLIENTS = 5;
 
     public static void main(String[] args) {
